@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新山ふるさと体験館</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero {
+      background-image: url('img1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- ヘッダー -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
+    <h1 class="text-2xl font-bold">新山ふるさと体験館</h1>
+    <nav class="space-x-4">
+      <a href="#about" class="hover:underline">宿泊について</a>
+      <a href="#gallery" class="hover:underline">写真</a>
+      <a href="#access" class="hover:underline">アクセス</a>
+      <a href="#reserve" class="hover:underline">予約</a>
+      <div class="inline-block ml-4">
+        <a href="index.html" class="underline text-sm font-bold">日本語</a>
+        <a href="index-en.html" class="underline text-sm mr-2">English</a>
+        <a href="index-zh.html" class="underline text-sm">简体中文</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- メインビジュアル -->
+  <section class="hero h-96 flex items-center justify-center text-white text-3xl font-semibold">
+    自然に囲まれた、まるごと一棟貸しの癒し時間
+  </section>
+
+  <!-- 宿泊について -->
+  <section id="about" class="py-12 px-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">宿泊について</h2>
+    <p>新山ふるさと体験館は、自然に囲まれた一棟貸しの宿泊施設です。ご家族やグループでの滞在に最適で、静かな時間を楽しめます。</p>
+  </section>
+
+  <!-- 写真（スライド式） -->
+  <section id="gallery" class="py-12 px-6 bg-white">
+    <h2 class="text-2xl font-bold mb-6 text-center">写真</h2>
+    <div class="relative w-full max-w-4xl mx-auto overflow-hidden">
+      <div class="flex transition-transform duration-500" id="slider">
+        <img src="img1.jpg" class="w-full flex-shrink-0" />
+        <img src="img2.jpg" class="w-full flex-shrink-0" />
+        <img src="img3.jpg" class="w-full flex-shrink-0" />
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button onclick="slide(-1)" class="px-4 py-2 bg-gray-300 rounded">←</button>
+      <button onclick="slide(1)" class="px-4 py-2 bg-gray-300 rounded ml-2">→</button>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section id="access" class="py-12 px-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">アクセス</h2>
+    <p>住所：○○県△△市新山1234<br>交通：○○駅から車で15分</p>
+    <div class="mt-4">
+      <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- 予約 -->
+  <section id="reserve" class="py-12 px-6 bg-green-50">
+    <h2 class="text-2xl font-bold mb-4 text-center">予約</h2>
+    <p class="text-center mb-6">空き状況や料金はAirbnbでご確認ください。</p>
+    <div class="text-center">
+      <a href="https://www.airbnb.jp/rooms/947467741319790049?source_impression_id=p3_1744271195_P3LMh_VYuxKjqTNb" target="_blank" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">
+        Airbnbで予約する
+      </a>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-gray-100 text-center text-sm py-6">
+    &copy; 2025 新山ふるさと体験館
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = slider.children.length;
+
+    function slide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+</body>
+</html>
 日本語版のトップページHTML（以前生成した内容）
